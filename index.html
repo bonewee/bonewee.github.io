@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BONE WEE | Drop 01 Coming Soon</title>
+    <title>BONE WEE | No More Bare Bones</title>
     <style>
         * {
             margin: 0;
@@ -16,6 +16,9 @@
             background-color: #F4F1EA;
             color: #111111;
             overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         /* Navigation */
@@ -23,11 +26,16 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 2rem;
+            padding: 2rem 2rem 1rem 2rem;
             font-size: 0.85rem;
             letter-spacing: 0.15em;
             text-transform: uppercase;
             font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
         }
 
         nav a {
@@ -40,16 +48,44 @@
             opacity: 0.5;
         }
 
+        /* Philanthropy Banner */
+        .charity-banner {
+            text-align: center;
+            padding: 0.75rem 2rem;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            background-color: rgba(17, 17, 17, 0.03);
+            border-top: 1px solid rgba(17, 17, 17, 0.08);
+            border-bottom: 1px solid rgba(17, 17, 17, 0.08);
+            font-weight: 500;
+        }
+
+        .charity-banner a {
+            color: #111111;
+            text-decoration: underline;
+            font-weight: 700;
+            transition: opacity 0.3s;
+        }
+
+        .charity-banner a:hover {
+            opacity: 0.6;
+        }
+
         /* Hero Section */
         .hero {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: 75vh;
+            flex: 1;
             text-align: center;
-            padding: 2rem;
-            position: relative;
+            padding: 4rem 2rem;
+        }
+
+        .logo-img {
+            max-width: 180px;
+            height: auto;
+            margin-bottom: 1.5rem;
         }
 
         .hero h1 {
@@ -58,75 +94,49 @@
             letter-spacing: -0.03em;
             line-height: 0.9;
             text-transform: uppercase;
-            margin-bottom: 2rem;
-        }
-
-        .cta-box {
-            border: 2px solid #111111;
-            padding: 2.5rem;
-            max-width: 450px;
-            width: 100%;
-            background: #F4F1EA;
-            box-shadow: 6px 6px 0px #111111;
-        }
-
-        .cta-box h2 {
-            font-size: 0.9rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
             margin-bottom: 0.5rem;
         }
 
-        .cta-box p {
-            font-size: 0.85rem;
-            opacity: 0.7;
-            margin-bottom: 1.5rem;
-        }
-
-        .email-form {
-            display: flex;
-            gap: 0.5rem;
-        }
-
-        .email-form input {
-            flex: 1;
-            padding: 0.75rem;
-            border: 1px solid #111111;
-            background: transparent;
-            outline: none;
-            font-size: 0.9rem;
-        }
-
-        .email-form button {
-            background: #111111;
-            color: #F4F1EA;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            font-weight: bold;
-            cursor: pointer;
+        .tagline {
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
             text-transform: uppercase;
-            letter-spacing: 0.1em;
-            font-size: 0.8rem;
-            transition: background 0.3s;
+            letter-spacing: 0.4em;
+            font-weight: 500;
+            margin-bottom: 3.5rem;
+            opacity: 0.9;
+            padding-left: 0.4em;
         }
 
-        .email-form button:hover {
-            background: #D4FF00;
+        .contact-text {
+            font-size: 1.1rem;
+            letter-spacing: 0.05em;
+            font-weight: 500;
+        }
+
+        .contact-text a {
             color: #111111;
+            text-decoration: underline;
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+
+        .contact-text a:hover {
+            color: #777777;
         }
 
         /* Marquee Ticker */
         .ticker {
             background: #111111;
             color: #F4F1EA;
-            padding: 1rem 0;
+            padding: 1.2rem 0;
             overflow: hidden;
             white-space: nowrap;
             display: flex;
+            margin-top: auto;
         }
 
         .ticker-wrap {
-            animation: marquee 15s linear infinite;
+            animation: marquee 20s linear infinite;
             display: inline-block;
             font-size: 1.2rem;
             font-weight: 700;
@@ -134,57 +144,25 @@
             text-transform: uppercase;
         }
 
+        .ticker-wrap a {
+            color: #F4F1EA;
+            text-decoration: underline;
+            transition: color 0.2s;
+        }
+
+        .ticker-wrap a:hover {
+            color: #D4FF00;
+        }
+
         @keyframes marquee {
             0% { transform: translateX(0%); }
             100% { transform: translateX(-50%); }
         }
 
-        /* Preview Cards */
-        .preview-section {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .card {
-            border: 1px solid rgba(17, 17, 17, 0.2);
-            padding: 3rem 1.5rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255, 255, 255, 0.3);
-            position: relative;
-            min-height: 400px;
-        }
-
-        .card-graphic {
-            font-size: 4rem;
-            margin-bottom: 2rem;
-            opacity: 0.8;
-        }
-
-        .card-tag {
-            position: absolute;
-            bottom: 1.5rem;
-            font-size: 0.75rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            font-weight: 600;
-            opacity: 0.6;
-        }
-
         /* Footer */
         footer {
             border-top: 1px solid rgba(17, 17, 17, 0.1);
-            padding: 3rem 2rem;
+            padding: 2.5rem 2rem;
             text-align: center;
             font-size: 0.8rem;
             opacity: 0.6;
@@ -196,53 +174,40 @@
 
     <nav>
         <div>BONE WEE ©2026</div>
-        <div style="opacity: 0.5;">Status: Drop 01 Loading...</div>
-        <div>
-            <a href="#" target="_blank">Instagram</a>
+        <div style="opacity: 0.8; font-weight: 700;">Drop 1 launched for Pride Month!</div>
+        <div class="nav-links">
+            <a href="https://bonewee.creator-spring.com/" target="_blank">Featured Products</a>
+            <a href="https://www.instagram.com/boneweellc" target="_blank">Instagram</a>
         </div>
     </nav>
 
+    <div class="charity-banner">
+        During the Month of June, 15% of proceeds from our Pride line will be donated to <a href="https://www.thetrevorproject.org/" target="_blank">The Trevor Project</a>
+    </div>
+
     <section class="hero">
-        <h1>BONE WEE</h1>
+        <!-- Replace 'logo.png' with your actual graphic image path when hosting -->
+        <img src="logo.png" alt="Bone Wee Logo" class="logo-img">
         
-        <div class="cta-box">
-            <h2>[ Enter the Ossuary ]</h2>
-            <p>Our first capsule collection drops soon via Spring. Drop your email for early access tokens.</p>
-            <form class="email-form" onsubmit="event.preventDefault(); alert('You are on the list.');">
-                <input type="email" placeholder="YOUR EMAIL ADDRESS" required>
-                <button type="submit">Notify Me</button>
-            </form>
-        </div>
+        <h1>BONE WEE</h1>
+        <div class="tagline">No More Bare Bones</div>
+        
+        <p class="contact-text">
+            Questions or ideas? <a href="mailto:boneweellc@gmail.com">Email us</a>.
+        </p>
     </section>
 
     <div class="ticker">
         <div class="ticker-wrap">
-            LAUNCHING SPRING 2026 • LAUNCHING SPRING 2026 • LAUNCHING SPRING 2026 • LAUNCHING SPRING 2026 • 
+            LAUNCHED JUNE 2026 • <a href="https://bonewee.creator-spring.com/" target="_blank">Shop here</a> • LAUNCHED JUNE 2026 • <a href="https://bonewee.creator-spring.com/" target="_blank">Shop here</a> • 
         </div>
         <div class="ticker-wrap">
-            LAUNCHING SPRING 2026 • LAUNCHING SPRING 2026 • LAUNCHING SPRING 2026 • LAUNCHING SPRING 2026 • 
+            LAUNCHED JUNE 2026 • <a href="https://bonewee.creator-spring.com/" target="_blank">Shop here</a> • LAUNCHED JUNE 2026 • <a href="https://bonewee.creator-spring.com/" target="_blank">Shop here</a> • 
         </div>
     </div>
 
-    <section class="preview-section">
-        <div class="grid">
-            <div class="card">
-                <div class="card-graphic">☠️</div>
-                <div class="card-tag">Design 001 // "Calcium"</div>
-            </div>
-            <div class="card">
-                <div class="card-graphic">🦴</div>
-                <div class="card-tag">Design 002 // "Little Bones"</div>
-            </div>
-            <div class="card">
-                <div class="card-graphic">⚡</div>
-                <div class="card-tag">Design 003 // "Spring_Launch"</div>
-            </div>
-        </div>
-    </section>
-
     <footer>
-        <p>©2026 BONE WEE. ALL RIGHTS RESERVED. POWERED BY SPRING.</p>
+        <p>©2026 BONE WEE. ALL RIGHTS RESERVED. POWERED BY <a href="https://bonewee.creator-spring.com/" target="_blank" style="color: inherit; text-decoration: underline;">SPRING</a>.</p>
     </footer>
 
 </body>
