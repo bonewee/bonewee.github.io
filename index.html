@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BONE WEE | Drop 01 Coming Soon</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #F4F1EA;
+            color: #111111;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem;
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        nav a {
+            color: #111111;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.5;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 75vh;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: clamp(4rem, 12vw, 10rem);
+            font-weight: 900;
+            letter-spacing: -0.03em;
+            line-height: 0.9;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .cta-box {
+            border: 2px solid #111111;
+            padding: 2.5rem;
+            max-width: 450px;
+            width: 100%;
+            background: #F4F1EA;
+            box-shadow: 6px 6px 0px #111111;
+        }
+
+        .cta-box h2 {
+            font-size: 0.9rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-box p {
+            font-size: 0.85rem;
+            opacity: 0.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .email-form {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .email-form input {
+            flex: 1;
+            padding: 0.75rem;
+            border: 1px solid #111111;
+            background: transparent;
+            outline: none;
+            font-size: 0.9rem;
+        }
+
+        .email-form button {
+            background: #111111;
+            color: #F4F1EA;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.8rem;
+            transition: background 0.3s;
+        }
+
+        .email-form button:hover {
+            background: #D4FF00;
+            color: #111111;
+        }
+
+        /* Marquee Ticker */
+        .ticker {
+            background: #111111;
+            color: #F4F1EA;
+            padding: 1rem 0;
+            overflow: hidden;
+            white-space: nowrap;
+            display: flex;
+        }
+
+        .ticker-wrap {
+            animation: marquee 15s linear infinite;
+            display: inline-block;
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Preview Cards */
+        .preview-section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            border: 1px solid rgba(17, 17, 17, 0.2);
+            padding: 3rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.3);
+            position: relative;
+            min-height: 400px;
+        }
+
+        .card-graphic {
+            font-size: 4rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+
+        .card-tag {
+            position: absolute;
+            bottom: 1.5rem;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-weight: 600;
+            opacity: 0.6;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid rgba(17, 17, 17, 0.1);
+            padding: 3rem 2rem;
+            text-align: center;
+            font-size: 0.8rem;
+            opacity: 0.6;
+            letter-spacing: 0.05em;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div>BONE WEE ©2026</div>
+        <div style="opacity: 0.5;">Status: Drop 01 Loading...</div>
+        <div>
+            <a href="#" target="_blank">Instagram</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>BONE WEE</h1>
+        
+        <div class="cta-box">
+            <h2>[ Enter the Ossuary ]</h2>
+            <p>Our first capsule collection drops soon via Spring. Drop your email for early access tokens.</p>
+            <form class="email-form" onsubmit="event.preventDefault(); alert('You are on the list.');">
+                <input type="email" placeholder="YOUR EMAIL ADDRESS" required>
+                <button type="submit">Notify Me</button>
+            </form>
+        </div>
+    </section>
+
+    <div class="ticker">
+        <div class="ticker-wrap">
+            LAUNCHING SPRING 2026 • LAUNCHING SPRING 2026 • LAUNCHING SPRING 2026 • LAUNCHING SPRING 2026 • 
+        </div>
+        <div class="ticker-wrap">
+            LAUNCHING SPRING 2026 • LAUNCHING SPRING 2026 • LAUNCHING SPRING 2026 • LAUNCHING SPRING 2026 • 
+        </div>
+    </div>
+
+    <section class="preview-section">
+        <div class="grid">
+            <div class="card">
+                <div class="card-graphic">☠️</div>
+                <div class="card-tag">Design 001 // "Calcium"</div>
+            </div>
+            <div class="card">
+                <div class="card-graphic">🦴</div>
+                <div class="card-tag">Design 002 // "Little Bones"</div>
+            </div>
+            <div class="card">
+                <div class="card-graphic">⚡</div>
+                <div class="card-tag">Design 003 // "Spring_Launch"</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>©2026 BONE WEE. ALL RIGHTS RESERVED. POWERED BY SPRING.</p>
+    </footer>
+
+</body>
+</html>
